@@ -52,10 +52,14 @@ There are 5 parts:
     Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 How run_analysis.R implements the above steps:
-
-    Require reshapre2 and data.table librareis.
-    Load both test and train data
-    Load the features and activity labels.
-    Extract the mean and standard deviation column names and data.
-    Process the data. There are two parts processing test and train data respectively.
-    Merge data set.
+    
+    Loads the dplyr package
+    Downloads the file to 'data' directory and unzips it
+    Load both test and train data for activity, subject and features
+    Binds the test and train data together by rows for activity, subject and features
+    Renames the columns for activity, subject and features
+    Binds activity, subject and features tables by columns to get complete data set
+    Extracts the mean and standard deviation columns
+    Uses a for loop to rename the activities column with descriptive activity names
+    Relabels the column names with descriptive column names
+    Creates a second, independent tidy data set with the average of each variable for each activity and each subject
